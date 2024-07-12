@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #div-pai {
+            text-align: center;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="div-pai">
+            <h1 id="h1">Você está conectado.</h1>
+        </div>
+    </div>
+
+    <script>
+        const h1 = document.getElementById("h1");
+
+        window.addEventListener("offline", (event) => {
+            h1.innerText = "Você está sem internet!";
+        });
+
+        window.addEventListener("online", (event) => {
+            h1.innerText = "Você está conectado!"
+        })
+    </script>
+</body>
+
+</html>
